@@ -1,0 +1,3 @@
+am start -n com.example.humiturejni/.MainActivity
+
+am force-stop com.example.humiturejni

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tempHumidityContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/etIp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211">
+
+        <TextView
+            android:id="@+id/tvTemperature"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg"
+            android:gravity="center"
+            android:text="温度: 0℃"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/tvHumidity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHeight_percent="0.33" />
+
+        <TextView
+            android:id="@+id/tvHumidity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg"
+            android:gravity="center"
+            android:text="湿度: 0%"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/tvWaterLevel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTemperature"
+            app:layout_constraintHeight_percent="0.33" />
+
+        <TextView
+            android:id="@+id/tvWaterLevel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg"
+            android:gravity="center"
+            android:text="水位: 0%"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHumidity"
+            app:layout_constraintHeight_percent="0.33" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <Button
+    android:id="@+id/btnHeat"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/bg"
+    android:text="加热"
+    app:layout_constraintEnd_toStartOf="@id/btnHumidify"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tempHumidityContainer"
+    app:layout_constraintWidth_percent="0.2" />
+
+<Button
+    android:id="@+id/btnHumidify"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/bg"
+    android:text="加湿"
+    app:layout_constraintEnd_toStartOf="@id/btnFan"
+    app:layout_constraintStart_toEndOf="@id/btnHeat"
+    app:layout_constraintTop_toBottomOf="@id/tempHumidityContainer"
+    app:layout_constraintWidth_percent="0.2" />
+
+<Button
+    android:id="@+id/btnFan"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/bg"
+    android:text="风扇"
+    app:layout_constraintEnd_toStartOf="@id/btnPump"
+    app:layout_constraintStart_toEndOf="@id/btnHumidify"
+    app:layout_constraintTop_toBottomOf="@id/tempHumidityContainer"
+    app:layout_constraintWidth_percent="0.2" />
+
+<Button
+    android:id="@+id/btnPump"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/bg"
+    android:text="水泵"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/btnFan"
+    app:layout_constraintTop_toBottomOf="@id/tempHumidityContainer"
+    app:layout_constraintWidth_percent="0.2" />
+
+
+    <EditText
+        android:id="@+id/etIp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:hint="输入IP地址"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnHeat" />
+
+    <EditText
+        android:id="@+id/etPort"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:hint="输入端口"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etIp" />
+
+    <Button
+        android:id="@+id/btnConnect"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="连接"
+        android:background="@drawable/bg"
+        app:layout_constraintTop_toBottomOf="@id/etPort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
